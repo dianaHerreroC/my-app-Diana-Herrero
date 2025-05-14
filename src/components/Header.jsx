@@ -1,11 +1,12 @@
 import { Link, NavLink } from "react-router-dom"
 import photo from "../assets/Photo.png"
+import CircledImage from "./CircledImage"
 
 export default function Header(){
     return(
         <header>
             <Link  to="/" className="my-logo">
-                <img src={photo} alt="my picture"/>
+                <CircledImage src={photo}/>
                 <span className="font-logo-text">Diana Herrero</span>
             </Link>
             <nav className="font-menu-bar-items">
