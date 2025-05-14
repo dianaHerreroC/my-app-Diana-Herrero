@@ -1,7 +1,96 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+:root {
+  --color-main: #BC8F8F;
+  --color-secondary: #FFDAB9;
+  --color-black: #5C3A3A;
+  --color-white: #FFF9F6;
+
+  --font-family-general: 'Montserrat', sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+}
+
+/* Text types */
+.font-menu-bar-items {
+  font-family: var(--font-family-general);
+  font-weight: var(--font-weight-semibold);
+  font-size: 16px;
+}
+.font-logo-text {
+  font-family: var(--font-family-general);
+  font-weight: var(--font-weight-semibold);
+  font-size: 22px;
+}
+.font-regular-text{
+  font-family: var(--font-family-general);
+  font-weight: var(--font-weight-regular);
+  font-size: 18px;
+}
+.font-titles{
+  font-family: var(--font-family-general);
+  font-weight: var(--font-weight-bold);
+  font-size: 40px;
+}
+.font-secondary-text{
+  font-family: var(--font-family-general);
+  font-weight: var(--font-weight-regular);
+  font-size: 14px;
+}
+.font-highlighted-text{
+  font-family: var(--font-family-general);
+  font-weight: var(--font-weight-semibold);
+  font-size: 20px;
+}
+.font-small-buttons{
+  font-family: var(--font-family-general);
+  font-weight: var(--font-weight-bold);
+  font-size: 11px;
+}
+
+/* General */
+.site-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-white);
+    color: var(--color-black);
+    font-family:var(--font-family-general);
+}
+
+/* Header */
+header {
+    height: 10vh;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    padding-inline: 30px;
+    background-color: var(--color-main);
+    color: var(--color-white);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+}
+header a{
+  color: var(--color-white);
+  text-decoration: none;
+}
+nav {
+  display: flex;
+  gap: 20px;
+}
+.active-nav-link {
+  text-decoration: underline;
+}
+.my-logo{
+  display:flex;
+  height: 100%;
+  box-sizing: border-box; /*padding included in height, doesn't modify it*/
+  padding-block: 5px;
+  gap: 10px;
+}
+.my-logo span{
+  align-self:flex-end;
+  color:var(--color-secondary);
+}
+.my-logo img{
+  height: 150%;
 }
 

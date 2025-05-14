@@ -6,9 +6,9 @@ export default function Header(){
         <header>
             <Link  to="/" className="my-logo">
                 <img src={photo} alt="my picture"/>
-                <span>Diana Herrero</span>
+                <span className="font-logo-text">Diana Herrero</span>
             </Link>
-            <nav>
+            <nav className="font-menu-bar-items">
                 <NavLink
                     to="/"
                     className={({ isActive }) => isActive ? "active-nav-link" : null}
