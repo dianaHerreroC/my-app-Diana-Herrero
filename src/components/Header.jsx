@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom"
-import photo from "../assets/Photo.png"
+import photo from "../assets/logo-photo.png"
 import CircledImage from "./CircledImage"
 
 export default function Header(){
