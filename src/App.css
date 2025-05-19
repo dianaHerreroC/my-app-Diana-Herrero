@@ -11,45 +11,53 @@
 }
 
 /* Text types */
-.font-menu-bar-items {
+.menu-bar-items {
   font-family: var(--font-family-general);
   font-weight: var(--font-weight-semibold);
   font-size: 16px;
 }
-.font-logo-text {
+.logo-text {
   font-family: var(--font-family-general);
   font-weight: var(--font-weight-semibold);
   font-size: 22px;
 }
-.font-regular-text{
+.regular-text{
   font-family: var(--font-family-general);
   font-weight: var(--font-weight-regular);
   font-size: 18px;
 }
-.font-titles{
+.titles{
   font-family: var(--font-family-general);
   font-weight: var(--font-weight-bold);
   font-size: 40px;
 }
-.font-secondary-text{
+.secondary-text{
   font-family: var(--font-family-general);
   font-weight: var(--font-weight-regular);
   font-size: 14px;
 }
-.font-highlighted-text{
+.highlighted-text{
   font-family: var(--font-family-general);
   font-weight: var(--font-weight-semibold);
   font-size: 20px;
 }
-.font-small-buttons{
+.small-buttons{
   font-family: var(--font-family-general);
   font-weight: var(--font-weight-bold);
   font-size: 11px;
 }
 
 /* General */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .site-wrapper {
-    min-height: 100vh;
+    margin:0;
+    height: 100vh;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     background-color: var(--color-white);
@@ -57,9 +65,10 @@
     font-family:var(--font-family-general);
 }
 .site-wrapper main{
-  min-height: 90vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
+  overflow: auto;
 }
 /* Header */
 header {
@@ -71,12 +80,13 @@ header {
     background-color: var(--color-main);
     color: var(--color-white);
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* over the rest of the page */
 }
 header a{
   color: var(--color-white);
   text-decoration: none;
 }
-header nav {
+header .menu-bar-items {
   display: flex;
   gap: 20px;
 }
@@ -90,7 +100,7 @@ header .my-logo{
   padding-block: 5px;
   gap: 10px;
 }
-header .my-logo span{
+header .logo-text{
   align-self:flex-end;
   color:var(--color-secondary);
 }
@@ -133,6 +143,61 @@ header .circled-picture{
 .about-me-section .text-section{
   text-align: right;
 }
-.about-me-section h2{
+.about-me-section .highlighted-text{
   color: var(--color-main);
+}
+
+/* Skills section */
+.skills-section{
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+}
+.skills-section .left-container{
+  padding-inline: 10vw;
+  padding-block:15vh;
+  box-sizing: border-box;
+  width:67vw;
+  height: 100%;
+  overflow-y: scroll;
+}
+.skills-section .right-container{
+  padding-inline: 5vw;
+  background-color: var(--color-main);
+  padding-block:10vh;
+  width:33vw;
+  height:100%;
+}
+.skills-section .left-container .titles{
+  color: var(--color-main);
+  margin-top: 0px;;
+  margin-bottom: 43px;
+}
+.skills-section .right-container .titles{
+  color: var(--color-secondary);
+  margin-top: 0px;;
+  margin-bottom: 43px;
+}
+.skills-section .left-container .regular-text{
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+}
+.skills-section .right-container .regular-text{
+  color: var(--color-secondary);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+}
+.skills-section .left-container hr{
+  border: none;
+  height: 3px;
+  background-color: var(--color-main);
+  margin-block: 60px;
+}
+.skills-section .right-container hr{
+  border: none;
+  height: 3px;
+  background-color: var(--color-secondary);
+  margin-block: 60px;
 }
