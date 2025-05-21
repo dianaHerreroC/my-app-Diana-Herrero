@@ -220,3 +220,28 @@ header .circled-picture{
   background-color: var(--color-secondary);
   margin-block: 60px;
 }
+
+/* Education section */
+.education-section{
+  min-height: 100%;
+  display:flex;
+  flex-direction: column;
+  padding-block: 15vh;
+  padding-inline: 18vw;
+  gap:60px;
+}
+.education-title-item{
+  border: 2px solid var(--color-secondary);
+  border-radius: 10px;
+  padding-block: 8px;
+  padding-inline: 12px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+}
+.education-title-item .highlighted-text{
+  color:var(--color-main);
+}
+.education-sub-section{
+  display:flex;
+  flex-direction: column;
+  gap: 15px;
+}
