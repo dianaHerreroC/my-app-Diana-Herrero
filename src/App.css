@@ -178,6 +178,7 @@ header .circled-picture{
   width:67vw;
   height: 100%;
   /*overflow-y: scroll;*/
+  /*overflow-y: scroll;*/
 }
 .skills-section .right-container{
   padding-inline: 5vw;
