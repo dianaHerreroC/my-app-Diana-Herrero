@@ -1,8 +1,11 @@
 :root {
-  --color-main: #BC8F8F;
-  --color-secondary: #FFDAB9;
-  --color-black: #5C3A3A;
-  --color-white: #FFF9F6;
+  --color-main: rgb(188, 143, 143);
+  --color-secondary: rgb(255, 218, 185);
+  --color-black: rgb(92, 58, 58);
+  --color-white: rgb(255, 249, 246);
+  --color-main-transparent: rgba(188, 143, 143, 0.35);
+  --color-main-super-transparent: rgba(188, 143, 143, 0.15);
+  --color-main-little-transparent: rgba(188, 143, 143, 0.6);
 
   --font-family-general: 'Montserrat', sans-serif;
   --font-weight-regular: 400;
@@ -127,6 +130,21 @@ header .circled-picture{
   box-sizing: border-box;
 }
 
+/* Scroll bar */
+.simplebar-track.simplebar-vertical { /* Track style */
+  opacity: 1 !important;
+  visibility: visible !important;
+  background-color: var(--color-main-super-transparent);
+}
+.simplebar-scrollbar::before { /* Bar style */
+  opacity: 1 !important;
+  background-color: var(--color-main-transparent) !important;
+}
+.custom-scroll-wrapper:hover .simplebar-scrollbar::before {
+  background-color: var(--color-main-little-transparent) !important;
+}
+
+
 /* About me section */
 .about-me-section{
   min-height: 100%;
@@ -159,7 +177,7 @@ header .circled-picture{
   box-sizing: border-box;
   width:67vw;
   height: 100%;
-  overflow-y: scroll;
+  /*overflow-y: scroll;*/
 }
 .skills-section .right-container{
   padding-inline: 5vw;
