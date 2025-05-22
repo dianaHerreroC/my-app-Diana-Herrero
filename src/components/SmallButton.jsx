@@ -1,7 +1,7 @@
-export default function SmallButton({children}){
+export default function SmallButton(props){
     return(
-        <button className="small-button">
-            {children}
+        <button onClick={props.handleClick} className="small-button">
+            {props.children}
         </button>
     )
 }
