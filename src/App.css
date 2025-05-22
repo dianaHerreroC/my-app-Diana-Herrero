@@ -70,15 +70,18 @@
     background-color: var(--color-white);
     color: var(--color-black);
     font-family:var(--font-family-general);
+    overflow: hidden;
 }
 .site-wrapper main{
   height: 90vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
 /* Header */
 header {
     height: 10vh;
+    width: 100vw;
     display: flex;
     align-items:center;
     justify-content: space-between;
@@ -136,11 +139,12 @@ header .circled-picture{
 /* Scroll bar */
 .custom-scroll-wrapper{
   height: 100%;
+  width: 100%;
   overflow: hidden;
 }
-.simplebar-track.simplebar-vertical { /* Track style */
-  opacity: 1 !important;
-  visibility: visible !important;
+.simplebar-track.simplebar-vertical, .simplebar-track.simplebar-horizontal { /* Track style */
+  opacity: 1;
+  visibility: visible;
   background-color: var(--color-main-super-transparent);
 }
 .simplebar-scrollbar::before { /* Bar style */
@@ -154,15 +158,14 @@ header .circled-picture{
 
 /* About me section */
 .about-me-section{
-  min-height: 100%;
   display:flex;
-  margin-block: auto;
-  margin-inline: 15vw;
+  padding-block: 15vh;
+  padding-inline: 15vw;
   gap:60px;
   align-items: center;
 }
 .about-me-section .circled-picture{
-  height: 50vh;
+  max-height: 50vh;
   background-color: var(--color-main);
 }
 .about-me-section .text-section{
@@ -176,11 +179,11 @@ header .circled-picture{
 .skills-section{
   display: flex;
   height: 100%;
-  overflow: hidden;
 }
 .skills-section .left-container{
   padding-inline: 10vw;
-  padding-block:15vh;
+  padding-top:15vh;
+  padding-bottom:40vh;
   box-sizing: border-box;
   width:67vw;
   height: 100%;
@@ -188,9 +191,13 @@ header .circled-picture{
 .skills-section .right-container{
   padding-inline: 5vw;
   background-color: var(--color-main);
-  padding-block:10vh;
+  padding-block:8vh;
+  box-sizing: border-box;
   width:33vw;
-  height:100%;
+}
+.skills-section .right-container section{
+  background-color: var(--color-main);
+  width:100%;
 }
 .skills-section .left-container .titles{
   color: var(--color-main);
@@ -200,35 +207,38 @@ header .circled-picture{
 .skills-section .right-container .titles{
   color: var(--color-secondary);
   margin-top: 0px;;
-  margin-bottom: 43px;
+  margin-bottom: 33px;
 }
 .skills-section .left-container .regular-text{
   display: flex;
   flex-direction: column;
   gap: 1.2em;
+  padding-left: 1.5rem;
 }
 .skills-section .right-container .regular-text{
   color: var(--color-secondary);
   display: flex;
   flex-direction: column;
   gap: 0.2em;
+  padding-left: 1.5rem;
 }
 .skills-section .left-container hr{
   border: none;
   height: 3px;
   background-color: var(--color-main);
-  margin-block: 60px;
+  margin-top: 60px;
+  margin-bottom: 80px;
 }
 .skills-section .right-container hr{
   border: none;
   height: 3px;
   background-color: var(--color-secondary);
-  margin-block: 60px;
+  margin-top: 40px;
+  margin-bottom: 60px;
 }
 
 /* Education section */
 .education-section{
-  min-height: 100%;
   display:flex;
   flex-direction: column;
   padding-block: 15vh;
@@ -290,7 +300,6 @@ header .circled-picture{
 
 /* Contact section */
 .contact-section{
-  min-height: 100%;
   padding-block: 20vh;
   padding-inline: 25vw;
   display:flex;
