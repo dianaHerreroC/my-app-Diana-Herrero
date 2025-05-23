@@ -47,9 +47,9 @@ export default function Header(){
                     </NavLink>
                     {isOpen && (
                         <div className="dropdown-content">
-                            <NavLink onClick={() => handleDropdownClick("top-page")}>Web Development</NavLink>
-                            <NavLink onClick={() => handleDropdownClick("technical-knowledge")}>Other Technical Knowledge</NavLink>
-                            <NavLink onClick={() => handleDropdownClick("core-strengths")}>Core Strengths</NavLink>
+                            <NavLink to="/skills" onClick={() => handleDropdownClick("top-page")} className="nav-link">Web Development</NavLink>
+                            <NavLink to="/skills" onClick={() => handleDropdownClick("technical-knowledge")} className="nav-link">Other Technical Knowledge</NavLink>
+                            <NavLink to="/skills" onClick={() => handleDropdownClick("core-strengths")} className="nav-link">Core Strengths</NavLink>
                         </div>
                     )}
                 </div>
