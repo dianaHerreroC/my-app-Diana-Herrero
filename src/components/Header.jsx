@@ -1,8 +1,21 @@
-import { Link, NavLink } from "react-router-dom"
+import { Link, NavLink, useNavigate } from "react-router-dom"
+import { useState } from "react"
 import photo from "../assets/logo-photo.png"
 import CircledImage from "./CircledImage"
+import { RiArrowDropDownLine } from "react-icons/ri";
+import { RiArrowDropUpLine } from "react-icons/ri";
+
 
 export default function Header(){
+    const [isOpen, setIsOpen] = useState(false)
+    const navigate = useNavigate()
+    const handleDropdownClick = (anchor) => {
+        navigate("/skills")
+        setTimeout(() => {
+            const el = document.getElementById(anchor)
+            if (el) el.scrollIntoView({ behavior: "smooth" })
+        }, 50)
+    }
     return(
         <header>
             <Link  to="/" className="my-logo">
@@ -12,31 +25,49 @@ export default function Header(){
             <nav className="menu-bar-items">
                 <NavLink
                     to="/"
-                    className={({ isActive }) => isActive ? "active-nav-link" : null}
+                    className={({ isActive }) => isActive ? "nav-link active-nav-link" : "nav-link"}
                 >
                     About me
                 </NavLink>
-                <NavLink
-                    to="/skills"
-                    className={({ isActive }) => isActive ? "active-nav-link" : null}
+                <div
+                    className="skills-dropdown"
+                    onMouseEnter={() => setIsOpen(true)}
+                    onMouseLeave={() => setIsOpen(false)}
                 >
-                    Skills
-                </NavLink>
+                    <NavLink
+                        onClick={(e) => {
+                            e.preventDefault()
+                            handleDropdownClick("top-page")
+                        }}
+                        to="/skills"
+                        className={({ isActive }) => isActive ? "nav-link active-nav-link" : "nav-link"}
+                    >
+                        Skills
+                        {isOpen ? <RiArrowDropDownLine className="arrow-drop-down"/> : <RiArrowDropUpLine className="arrow-drop-down"/>}
+                    </NavLink>
+                    {isOpen && (
+                        <div className="dropdown-content">
+                            <NavLink onClick={() => handleDropdownClick("top-page")}>Web Development</NavLink>
+                            <NavLink onClick={() => handleDropdownClick("technical-knowledge")}>Other Technical Knowledge</NavLink>
+                            <NavLink onClick={() => handleDropdownClick("core-strengths")}>Core Strengths</NavLink>
+                        </div>
+                    )}
+                </div>
                 <NavLink
                     to="/education"
-                    className={({ isActive }) => isActive ? "active-nav-link" : null}
+                    className={({ isActive }) => isActive ? "nav-link active-nav-link" : "nav-link"}
                 >
                     Education
                 </NavLink>
                 <NavLink
                     to="/workhistory"
-                    className={({ isActive }) => isActive ? "active-nav-link" : null}
+                    className={({ isActive }) => isActive ? "nav-link active-nav-link" : "nav-link"}
                 >
                     Work history
                 </NavLink>
                 <NavLink
                     to="/contact"
-                    className={({ isActive }) => isActive ? "active-nav-link" : null}
+                    className={({ isActive }) => isActive ? "nav-link active-nav-link" : "nav-link"}
                 >
                     Contact
                 </NavLink>

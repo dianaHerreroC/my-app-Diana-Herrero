@@ -4,7 +4,7 @@ export default function Skills(){
     return(
         <div className="skills-section">
             <ScrollWrapper>
-                <div className="left-container">
+                <div className="left-container" id="top-page">
                     <section>
                         <h1 className="titles">Web Development</h1>
                         <ul className="regular-text">
@@ -14,8 +14,8 @@ export default function Skills(){
                             <li>Skilled in version control using Git.</li>
                         </ul>
                     </section>
-                    <hr/>
-                    <section>
+                    <section id="technical-knowledge">
+                        <hr/>
                         <h1 className="titles">Other technical knowledge</h1>
                         <ul className="regular-text">
                             <li>Implemented several Deep Learning algorithms using Keras library (TensorFlow), with a special focus on image recognition through neural networks.</li>
@@ -23,9 +23,9 @@ export default function Skills(){
                             <li>Familiarity with graphic design using AutoCAD.</li>
                         </ul>
                     </section>
-                    <hr/>
-                    <section>
-                        <h1 className="titles">Core strengths</h1>
+                    <section id="core-strengths">
+                        <hr/>
+                        <h1 className="titles">Core Strengths</h1>
                         <ul className="regular-text">
                             <li>Strong interest in continuous learning and motivation to tackle new challenges.</li>
                             <li>Effective communication skills, with an open attitude to help whenever possible.</li>
