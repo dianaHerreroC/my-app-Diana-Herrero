@@ -87,6 +87,7 @@
 }
 
 /* ----------- Header ------------ */
+
 header {
     height: 10vh;
     width: 100vw;
@@ -262,7 +263,7 @@ header .nav-link{
   color: var(--color-secondary);
   display: flex;
   flex-direction: column;
-  gap: 0.2em;
+  gap: 0.2rem;
   padding-left: 1.5rem;
 }
 .skills-section .left-container hr{
@@ -408,4 +409,37 @@ header .nav-link{
   margin-inline:0.5rem;
   border:0.06rem solid var(--color-secondary);
   border-radius: 10%;
+}
+
+/* Specifications for mobile screen */
+@media (max-width: 600px) {
+
+  /* ----------- Text types ----------- */
+  .menu-bar-items {
+    font-size: 0.75rem;
+  }
+  .logo-text {
+    font-size: 1.05rem;
+  }
+  .regular-text {
+    font-size: 0.84rem;
+  }
+  .titles {
+    font-size: 1.875rem;
+  }
+  .secondary-text {
+    font-size: 0.66rem;
+  }
+  .highlighted-text {
+    font-size: 0.9375rem;
+  }
+  .small-button {
+    font-size: 0.5175rem;
+    border-radius: 0.225rem;
+    padding-inline: 0.585rem;
+    padding-block: 0.33rem;
+  }
+  .small-messages {
+    font-size: 0.5175rem;
+  }
 }
