@@ -9,6 +9,7 @@ export default function Education(){
                     name="Industrial and Automatic Electronic Engineering"
                     year="2021"
                     school="Universidad Politécnica de Madrid. ETSIDI."
+                    pdfRoute="/grade-title.pdf"
                 />
             </section>
             <section className="education-sub-section">
@@ -17,16 +18,19 @@ export default function Education(){
                     name="Advanced Creatio Developer Certification"
                     year="2020"
                     school="Creatio."
+                    pdfRoute="/creatio-certification.pdf"
                 />
                 <EducationTitle
                     name="Meta Front-End Developer"
                     year="2024"
                     school="Coursera, Meta."
+                    pdfRoute="/front-end-certification.pdf"
                 />
                 <EducationTitle
                     name="Become a Professional React Developer"
                     year="2024"
                     school="Coursera, Scrimba."
+                    pdfRoute="/react-certification.pdf"
                 />
             </section>
         </div>
