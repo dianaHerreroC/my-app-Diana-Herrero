@@ -15,10 +15,10 @@ export default function Education(){
             <section className="education-sub-section">
                 <h1 className="titles">Certifications</h1>
                 <EducationTitle
-                    name="Advanced Creatio Developer Certification"
-                    year="2020"
-                    school="Creatio."
-                    pdfRoute="/creatio-certification.pdf"
+                    name="Become a Professional React Developer"
+                    year="2024"
+                    school="Coursera, Scrimba."
+                    pdfRoute="/react-certification.pdf"
                 />
                 <EducationTitle
                     name="Meta Front-End Developer"
@@ -27,10 +27,10 @@ export default function Education(){
                     pdfRoute="/front-end-certification.pdf"
                 />
                 <EducationTitle
-                    name="Become a Professional React Developer"
-                    year="2024"
-                    school="Coursera, Scrimba."
-                    pdfRoute="/react-certification.pdf"
+                    name="Advanced Creatio Developer Certification"
+                    year="2020"
+                    school="Creatio."
+                    pdfRoute="/creatio-certification.pdf"
                 />
             </section>
         </div>
