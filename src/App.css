@@ -442,4 +442,48 @@ header .nav-link{
   .small-messages {
     font-size: 0.5175rem;
   }
+
+  /* ----------- Header ------------ */
+  header{
+    display:flex;
+    flex-direction: column;
+    padding-inline: 0;
+    box-shadow:none;
+  }
+  header .horizontal-header{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 1.41rem;
+    box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.2);
+    z-index: 2000;
+  }
+  header .menu-bar-items {
+    display: flex;
+    flex-direction:column;
+    align-self: flex-end;
+    background-color: var(--color-main);
+    padding: 1rem;
+    box-shadow: -0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 0.2);
+    gap:0.75rem;
+  }
+  header .circled-picture{
+    height: 135%;
+    margin-top: 0.25rem;
+  }
+  /* Dropdown */
+  .skills-dropdown{
+    position:static;
+  }
+  .skills-dropdown .dropdown-content{
+    position: static;
+    background:none;
+    border: 0px;
+    padding-left: 0.75rem;
+    padding-right: 0rem;
+    padding-block:0rem;
+    gap:0.75rem;
+  }
 }

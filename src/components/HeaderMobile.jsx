@@ -22,11 +22,13 @@ export default function HeaderMobile(){
     };
     return(
         <header>
-            <Link  to="/" className="my-logo">
-                <CircledImage src={photo}/>
-                <span className="logo-text">Diana Herrero</span>
-            </Link>
-            <CiMenuBurger className="hamburger-icon" onClick={() => setIsMenuOpen(!isMenuOpen)}/>
+            <div className="horizontal-header">
+                <Link  to="/" className="my-logo">
+                    <CircledImage src={photo}/>
+                    <span className="logo-text">Diana Herrero</span>
+                </Link>
+                <CiMenuBurger className="hamburger-icon" onClick={() => setIsMenuOpen(!isMenuOpen)}/>
+            </div>
             {isMenuOpen && <nav className="menu-bar-items">
                 <NavLink
                     to="/"
