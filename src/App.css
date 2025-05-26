@@ -111,6 +111,10 @@ header .menu-bar-items {
 header .active-nav-link {
   text-decoration: underline;
 }
+header .skills-navlink{
+  display:flex;
+  align-items: center;
+}
 header .my-logo{
   display:flex;
   height: 100%;
@@ -153,10 +157,12 @@ header .circled-picture{
   align-items: center;
 }
 /* Hovers */
-header .nav-link:hover{
-  background:
-    linear-gradient(var(--color-secondary-super-transparent),
-    var(--color-secondary-super-transparent));
+@media (min-width: 600px) {
+  header .nav-link:hover{
+    background:
+      linear-gradient(var(--color-secondary-super-transparent),
+      var(--color-secondary-super-transparent));
+  }
 }
 header .nav-link{
   padding:0.5rem;
@@ -473,9 +479,18 @@ header .nav-link{
     height: 135%;
     margin-top: 0.25rem;
   }
+  header .active-nav-link {
+    text-decoration: none;
+    background:
+      linear-gradient(var(--color-secondary-super-transparent),
+      var(--color-secondary-super-transparent)), var(--color-main);
+  }
   /* Dropdown */
   .skills-dropdown{
     position:static;
+  }
+  .nav-link.skills-navlink{
+    padding-inline-end: 5rem;
   }
   .skills-dropdown .dropdown-content{
     position: static;

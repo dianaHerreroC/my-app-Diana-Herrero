@@ -34,17 +34,19 @@ export default function HeaderDesktop(){
                     onMouseEnter={() => setIsDropdownOpen(true)}
                     onMouseLeave={() => setIsDropdownOpen(false)}
                 >
-                    <NavLink
-                        onClick={(e) => {
-                            e.preventDefault()
-                            handleDropdownClick("top-page")
-                        }}
-                        to="/skills"
-                        className={({ isActive }) => isActive ? "nav-link active-nav-link" : "nav-link"}
-                    >
-                        Skills
+                    <div className="nav-link skills-navlink">
+                        <NavLink
+                            onClick={(e) => {
+                                e.preventDefault()
+                                handleDropdownClick("top-page")
+                            }}
+                            to="/skills"
+                            className={({ isActive }) => isActive ? "active-nav-link" : null}
+                        >
+                            Skills
+                        </NavLink>
                         {isDropdownOpen ? <RiArrowDropDownLine className="arrow-drop-down"/> : <RiArrowDropUpLine className="arrow-drop-down"/>}
-                    </NavLink>
+                    </div>
                     {isDropdownOpen && (
                         <div className="dropdown-content">
                             <NavLink to="/skills" onClick={() => handleDropdownClick("top-page")} className="nav-link">Web Development</NavLink>

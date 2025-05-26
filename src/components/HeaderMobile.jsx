@@ -1,4 +1,4 @@
-import { Link, NavLink, useNavigate } from "react-router-dom"
+import { Link, NavLink, useNavigate, useLocation } from "react-router-dom"
 import { useState } from "react"
 import photo from "../assets/logo-photo.png"
 import CircledImage from "./CircledImage"
@@ -17,9 +17,17 @@ export default function HeaderMobile(){
             if (el) el.scrollIntoView({ behavior: "smooth" })
         }, 50)
     }
+    const toggleDropDown = () =>{
+        setIsDropdownOpen(prev => !prev);
+    }
     const toggleMenu = () => {
         setIsMenuOpen(prev => !prev);
-    };
+    }
+    const location = useLocation()
+    const isSkillsActive = location.pathname === "/skills"
+    const isWebDevActive = location.pathname === "/skills" && location.hash === "#top-page"
+    const isTechKnowActive = location.pathname === "/skills" && location.hash === "#technical-knowledge"
+    const isCoreStrActive = location.pathname === "/skills" && location.hash === "#core-strengths"
     return(
         <header>
             <div className="horizontal-header">
@@ -27,7 +35,7 @@ export default function HeaderMobile(){
                     <CircledImage src={photo}/>
                     <span className="logo-text">Diana Herrero</span>
                 </Link>
-                <CiMenuBurger className="hamburger-icon" onClick={() => setIsMenuOpen(!isMenuOpen)}/>
+                <CiMenuBurger className="hamburger-icon" onClick={toggleMenu}/>
             </div>
             {isMenuOpen && <nav className="menu-bar-items">
                 <NavLink
@@ -36,27 +44,47 @@ export default function HeaderMobile(){
                 >
                     About me
                 </NavLink>
-                <div
-                    className="skills-dropdown"
-                    onMouseEnter={() => setIsDropdownOpen(true)}
-                    onMouseLeave={() => setIsDropdownOpen(false)}
-                >
-                    <NavLink
-                        onClick={(e) => {
-                            e.preventDefault()
-                            handleDropdownClick("top-page")
-                        }}
-                        to="/skills"
-                        className={({ isActive }) => isActive ? "nav-link active-nav-link" : "nav-link"}
+                <div className="skills-dropdown">
+                    <div
+                        className={isSkillsActive ? "nav-link skills-navlink active-nav-link" : "nav-link skills-navlink"}
+                        onClick={toggleDropDown}
                     >
-                        Skills
+                        <NavLink
+                            onClick={(e) => {
+                                e.preventDefault()
+                                handleDropdownClick("top-page")
+                                setIsDropdownOpen(true)
+                                e.stopPropagation()
+                            }}
+                            to="/skills"
+                        >
+                            Skills
+                        </NavLink>
                         {isDropdownOpen ? <RiArrowDropDownLine className="arrow-drop-down"/> : <RiArrowDropUpLine className="arrow-drop-down"/>}
-                    </NavLink>
+                    </div>
                     {isDropdownOpen && (
                         <div className="dropdown-content">
-                            <NavLink to="/skills" onClick={() => handleDropdownClick("top-page")} className="nav-link">Web Development</NavLink>
-                            <NavLink to="/skills" onClick={() => handleDropdownClick("technical-knowledge")} className="nav-link">Other Technical Knowledge</NavLink>
-                            <NavLink to="/skills" onClick={() => handleDropdownClick("core-strengths")} className="nav-link">Core Strengths</NavLink>
+                            <NavLink
+                                to="/skills#top-page"
+                                onClick={() => handleDropdownClick("top-page")}
+                                className={isWebDevActive ? "nav-link active-nav-link" : "nav-link"}
+                            >
+                                Web Development
+                            </NavLink>
+                            <NavLink
+                                to="/skills#technical-knowledge"
+                                onClick={() => handleDropdownClick("technical-knowledge")}
+                                className={isTechKnowActive ? "nav-link active-nav-link" : "nav-link"}
+                            >
+                                Other Technical Knowledge
+                            </NavLink>
+                            <NavLink
+                                to="/skills#core-strengths"
+                                onClick={() => handleDropdownClick("core-strengths")}
+                                className={isCoreStrActive ? "nav-link active-nav-link" : "nav-link"}
+                            >
+                                Core Strengths
+                            </NavLink>
                         </div>
                     )}
                 </div>
