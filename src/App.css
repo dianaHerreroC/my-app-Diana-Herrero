@@ -512,4 +512,41 @@ header .nav-link{
     padding-block:0rem;
     gap:0.75rem;
   }
+
+  /* ----------- About me section ----------- */
+  .about-me-section{
+    flex-direction: column;
+    padding-block: 7.5vh;
+    padding-inline: 10vw;
+    justify-content: space-between;
+    gap:unset;
+    height:100%;
+  }
+  .about-me-section .circled-picture{
+    max-height: 35vh;
+  }
+  .about-me-section .text-section{
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+  /*
+  .about-me-section{
+    display:flex;
+    padding-block: 15vh;
+    padding-inline: 15vw;
+    gap:3.75rem;
+    align-items: center;
+  }
+  .about-me-section .circled-picture{
+    max-height: 50vh;
+    background-color: var(--color-main);
+  }
+  .about-me-section .text-section{
+    text-align: right;
+  }
+  .about-me-section .highlighted-text{
+    color: var(--color-main);
+  }*/
 }
