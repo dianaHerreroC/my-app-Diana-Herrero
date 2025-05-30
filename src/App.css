@@ -485,6 +485,17 @@ header .nav-link{
       linear-gradient(var(--color-secondary-super-transparent),
       var(--color-secondary-super-transparent)), var(--color-main);
   }
+  .hamburguer-open-menu {
+    background-color: var(--color-secondary-super-transparent);
+    border-radius: 10%;
+    border: 1px solid var(--color-secondary);
+  }
+  .hamburguer-icon{
+    padding:0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   /* Dropdown */
   .skills-dropdown{
     position:static;

@@ -35,7 +35,9 @@ export default function HeaderMobile(){
                     <CircledImage src={photo}/>
                     <span className="logo-text">Diana Herrero</span>
                 </Link>
-                <CiMenuBurger className="hamburger-icon" onClick={toggleMenu}/>
+                <div className={isMenuOpen ? "hamburguer-icon hamburguer-open-menu" : "hamburguer-icon"}>
+                    <CiMenuBurger onClick={toggleMenu}/>
+                </div>
             </div>
             {isMenuOpen && <nav className="menu-bar-items">
                 <NavLink
