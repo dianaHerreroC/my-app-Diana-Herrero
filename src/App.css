@@ -531,22 +531,51 @@ header .nav-link{
     text-align: center;
     gap: 0.5rem;
   }
-  /*
-  .about-me-section{
-    display:flex;
-    padding-block: 15vh;
-    padding-inline: 15vw;
-    gap:3.75rem;
+
+  /* ----------- Skills section ----------- */
+  .skills-section{
+    flex-direction:column;
+  }
+  .skills-section .left-container{
+    padding-inline: 10vw;
+    padding-top:7.5vh;
+    padding-bottom:80%;
+    height: 67%;
+    width: 100%;
+  }
+  .skills-section .right-container{
+    padding-inline: 7.5vw;
+    padding-block:1rem;
+    height:33%;
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 2rem;
     align-items: center;
-  }
-  .about-me-section .circled-picture{
-    max-height: 50vh;
-    background-color: var(--color-main);
-  }
-  .about-me-section .text-section{
     text-align: right;
   }
-  .about-me-section .highlighted-text{
-    color: var(--color-main);
-  }*/
+  .skills-section .right-container section{
+    width:50%;
+  }
+  .skills-section .left-container .titles{
+    margin-bottom: 2.16rem;
+  }
+  .skills-section .right-container .titles{
+    margin-top: 0;
+    margin-bottom: .65rem;
+    font-size: 1rem;
+  }
+  .skills-section .left-container .regular-text{
+    gap: 0.96rem;
+  }
+  .skills-section .right-container .regular-text{
+    gap: 0.16rem;
+    padding-left: 1.2rem;
+    font-size: 0.8rem;
+    align-items: flex-start;
+  }
+  .skills-section .left-container hr{
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+  }
 }
