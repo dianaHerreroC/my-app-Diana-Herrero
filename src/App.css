@@ -578,4 +578,30 @@ header .nav-link{
     margin-top: 3rem;
     margin-bottom: 4rem;
   }
+
+  /* ----------- Education section ----------- */
+  .education-section{
+    padding-block: 7.5vh;
+    padding-inline: 15vw;
+  }
+
+  /* ----------- Work History section ----------- */
+  .work-history-section{
+    gap: 1.5rem;
+    padding-block: 7.5vh;
+  }
+  .employment-item{
+    padding-top: 1.25rem;
+    padding-bottom: 0.75rem;
+    padding-inline: 1.75rem;
+  }
+  .employment-item h1{
+    margin-bottom: 0.16rem;
+  }
+  .employment-item .text-unexpanded{
+    max-height: 1.9rem;
+  }
+  .employment-item ul{
+    padding-left: 1.6rem;
+  }
 }
