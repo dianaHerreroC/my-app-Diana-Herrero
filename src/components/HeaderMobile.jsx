@@ -1,5 +1,5 @@
 import { Link, NavLink, useNavigate, useLocation } from "react-router-dom"
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import photo from "../assets/logo-photo.png"
 import CircledImage from "./CircledImage"
 import { RiArrowDropDownLine } from "react-icons/ri";
@@ -28,6 +28,23 @@ export default function HeaderMobile(){
     const isWebDevActive = location.pathname === "/skills" && location.hash === "#top-page"
     const isTechKnowActive = location.pathname === "/skills" && location.hash === "#technical-knowledge"
     const isCoreStrActive = location.pathname === "/skills" && location.hash === "#core-strengths"
+    const menuRef = useRef(null) /* This is for detecting touch outside the menu and close it */
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (menuRef.current && !menuRef.current.contains(event.target)) {
+            setIsMenuOpen(false)
+            setIsDropdownOpen(false)
+            }
+        }
+
+        document.addEventListener("mousedown", handleClickOutside)
+        document.addEventListener("touchstart", handleClickOutside)
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside)
+            document.removeEventListener("touchstart", handleClickOutside)
+        }
+    }, [])
     return(
         <header>
             <div className="horizontal-header">
@@ -39,7 +56,7 @@ export default function HeaderMobile(){
                     <CiMenuBurger onClick={toggleMenu}/>
                 </div>
             </div>
-            {isMenuOpen && <nav className="menu-bar-items">
+            {isMenuOpen && <nav className="menu-bar-items" ref={menuRef}>
                 <NavLink
                     to="/"
                     className={({ isActive }) => isActive ? "nav-link active-nav-link" : "nav-link"}
