@@ -156,8 +156,8 @@ header .circled-picture{
   display:flex;
   align-items: center;
 }
-/* Hovers */
-@media (min-width: 600px) {
+/* Hovers, only for mouse devices */
+@media (hover: hover) {
   header .nav-link:hover{
     background:
       linear-gradient(var(--color-secondary-super-transparent),
@@ -418,7 +418,7 @@ header .nav-link{
 }
 
 /* Specifications for mobile screen */
-@media (max-width: 600px) {
+@media (orientation: portrait) {
 
   /* ----------- Text types ----------- */
   .menu-bar-items {
@@ -520,11 +520,11 @@ header .nav-link{
     padding-block: 7.5dvh;
     padding-inline: 10dvw;
     justify-content: space-between;
-    gap:unset;
+    gap:2rem;
     height:100%;
   }
   .about-me-section .circled-picture{
-    max-height: 35dvh;
+    max-height: 60dvw;
   }
   .about-me-section .text-section{
     display:flex;

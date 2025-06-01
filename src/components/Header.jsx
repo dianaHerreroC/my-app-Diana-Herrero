@@ -3,6 +3,6 @@ import HeaderDesktop from "./HeaderDesktop"
 import HeaderMobile from "./HeaderMobile";
 
 export default function Header(){
-    const isMobile = useMediaQuery({ maxWidth: 600 });
+    const isMobile = useMediaQuery({ orientation: 'portrait' });
     return isMobile ? <HeaderMobile /> : <HeaderDesktop />;
 }
