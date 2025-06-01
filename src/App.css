@@ -215,7 +215,7 @@ header .nav-link{
   align-items: center;
 }
 .about-me-section .circled-picture{
-  max-height: 50dvh;
+  height: 50dvh;
   background-color: var(--color-main);
 }
 .about-me-section .text-section{
@@ -524,7 +524,7 @@ header .nav-link{
     height:100%;
   }
   .about-me-section .circled-picture{
-    max-height: 60dvw;
+    height: 60dvw;
   }
   .about-me-section .text-section{
     display:flex;
