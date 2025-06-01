@@ -343,7 +343,7 @@ header .nav-link{
 }
 .employment-item .text-unexpanded{
   max-height: 2.3rem;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 .employment-item ul{
   padding-left: 2rem;
