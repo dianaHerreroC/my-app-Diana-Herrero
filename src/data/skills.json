@@ -1,0 +1,42 @@
+{
+  "leftContainer": [
+    {
+      "id": "top-page",
+      "title": "Web Development",
+      "items": [
+        "Proficient in React, with experience building dynamic and responsive web applications.",
+        "Solid understanding of databases and how to integrate them into user interfaces.",
+        "Competent in object-oriented programming (OOP), particularly in C++, for developing desktop applications.",
+        "Skilled in version control using Git."
+      ]
+    },
+    {
+      "id": "technical-knowledge",
+      "title": "Other technical knowledge",
+      "items": [
+        "Implemented several Deep Learning algorithms using Keras library (TensorFlow), with a special focus on image recognition through neural networks.",
+        "Knowledge of operating systems, particularly skilled in using Ubuntu (Linux).",
+        "Familiarity with graphic design using AutoCAD."
+      ]
+    },
+    {
+      "id": "core-strengths",
+      "title": "Core Strengths",
+      "items": [
+        "Strong interest in continuous learning and motivation to tackle new challenges.",
+        "Effective communication skills, with an open attitude to help whenever possible.",
+        "Proactivity in problem-solving."
+      ]
+    }
+  ],
+  "rightContainer": [
+    {
+      "title": "Programming languages",
+      "items": ["JavaScript", "Python", "C/C++", "SQL", "C#"]
+    },
+    {
+      "title": "Languages",
+      "items": ["Spanish: Native", "English: Fluent"]
+    }
+  ]
+}

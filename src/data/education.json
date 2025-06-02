@@ -1,0 +1,36 @@
+{
+  "grade": {
+    "title": "Grade",
+    "items": [
+      {
+        "name": "Industrial and Automatic Electronic Engineering",
+        "year": "2021",
+        "school": "Universidad Politécnica de Madrid. ETSIDI.",
+        "pdfName": "grade-title.pdf"
+      }
+    ]
+  },
+  "certifications": {
+    "title": "Certifications",
+    "items": [
+      {
+        "name": "Become a Professional React Developer",
+        "year": "2024",
+        "school": "Coursera, Scrimba.",
+        "pdfName": "react-certification.pdf"
+      },
+      {
+        "name": "Meta Front-End Developer",
+        "year": "2024",
+        "school": "Coursera, Meta.",
+        "pdfName": "front-end-certification.pdf"
+      },
+      {
+        "name": "Advanced Creatio Developer Certification",
+        "year": "2020",
+        "school": "Creatio.",
+        "pdfName": "creatio-certification.pdf"
+      }
+    ]
+  }
+}
