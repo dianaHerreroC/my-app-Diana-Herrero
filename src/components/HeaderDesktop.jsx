@@ -1,5 +1,6 @@
 import { Link, NavLink, useNavigate } from "react-router-dom"
 import { useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
 import photo from "../assets/logo-photo.png"
 import CircledImage from "./CircledImage"
 import { RiArrowDropDownLine } from "react-icons/ri";
@@ -47,13 +48,21 @@ export default function HeaderDesktop(){
                         </NavLink>
                         {isDropdownOpen ? <RiArrowDropDownLine className="arrow-drop-down"/> : <RiArrowDropUpLine className="arrow-drop-down"/>}
                     </div>
-                    {isDropdownOpen && (
-                        <div className="dropdown-content">
-                            <NavLink to="/skills" onClick={() => handleDropdownClick("top-page")} className="nav-link">Web Development</NavLink>
-                            <NavLink to="/skills" onClick={() => handleDropdownClick("technical-knowledge")} className="nav-link">Other Technical Knowledge</NavLink>
-                            <NavLink to="/skills" onClick={() => handleDropdownClick("core-strengths")} className="nav-link">Core Strengths</NavLink>
-                        </div>
-                    )}
+                    <AnimatePresence>
+                        {isDropdownOpen && (
+                            <motion.div
+                                className="dropdown-content"
+                                initial={{ height: 0, opacity: 0 }}
+                                animate={{ height: "auto", opacity: 1 }}
+                                exit={{ height: 0, opacity: 0 }}
+                                transition={{ duration: 0.3 }}
+                            >
+                                <NavLink to="/skills" onClick={() => handleDropdownClick("top-page")} className="nav-link">Web Development</NavLink>
+                                <NavLink to="/skills" onClick={() => handleDropdownClick("technical-knowledge")} className="nav-link">Other Technical Knowledge</NavLink>
+                                <NavLink to="/skills" onClick={() => handleDropdownClick("core-strengths")} className="nav-link">Core Strengths</NavLink>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
                 </div>
                 <NavLink
                     to="/education"
