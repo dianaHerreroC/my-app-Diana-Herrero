@@ -108,12 +108,8 @@ header .menu-bar-items {
   display: flex;
   gap: 1rem;
 }
-header .active-nav-link {
+header .active-nav-link, header .active-language {
   text-decoration: underline;
-}
-header .skills-navlink{
-  display:flex;
-  align-items: center;
 }
 header .my-logo{
   display:flex;
@@ -130,14 +126,32 @@ header .circled-picture{
   height: 165%;
   background-color: var(--color-secondary);
 }
+header .open-menu-icon {
+  background-color: var(--color-secondary-super-transparent);
+  border-radius: 10%;
+  border: 1px solid var(--color-secondary);
+}
+header .language-dropdown-button img{
+  height: 1rem;
+}
+header .language-button{
+  padding:0.5rem;
+  align-self: center;
+  display: flex;
+  justify-items: center;
+}
+header .nav-link, header .language-option{
+  padding:0.5rem;
+  border-radius:0.31rem;
+}
 /* Dropdown */
-.skills-dropdown{
+.skills-dropdown, .language-dropdown-button{
   display:flex;
   flex-direction: column;
   position: relative;
   width:max-content;
 }
-.skills-dropdown .dropdown-content{
+header .dropdown-content{
   position: absolute;
   top: 100%;
   z-index: 999;
@@ -156,17 +170,21 @@ header .circled-picture{
   display:flex;
   align-items: center;
 }
+.language-option{
+  display: flex;
+  gap: 0.3rem;
+}
+.language-dropdown-button{
+  align-items: flex-end;
+  justify-content: center;
+}
 /* Hovers, only for mouse devices */
 @media (hover: hover) {
-  header .nav-link:hover{
+  header .nav-link:hover, .language-option:hover{
     background:
       linear-gradient(var(--color-secondary-super-transparent),
       var(--color-secondary-super-transparent));
   }
-}
-header .nav-link{
-  padding:0.5rem;
-  border-radius:0.31rem;
 }
 
 /* ----------- For the pictures in a circle ----------- */
@@ -481,16 +499,11 @@ header .nav-link{
     height: 135%;
     margin-top: 0.25rem;
   }
-  header .active-nav-link {
+  header .active-nav-link, header .active-language {
     text-decoration: none;
     background:
       linear-gradient(var(--color-secondary-super-transparent),
-      var(--color-secondary-super-transparent)), var(--color-main);
-  }
-  .hamburguer-open-menu {
-    background-color: var(--color-secondary-super-transparent);
-    border-radius: 10%;
-    border: 1px solid var(--color-secondary);
+      var(--color-secondary-super-transparent));
   }
   .hamburguer-icon{
     padding:0.5rem;
@@ -498,11 +511,15 @@ header .nav-link{
     justify-content: center;
     align-items: center;
   }
+  header .right-buttons{
+    display: flex;
+    gap: 0.3rem;
+  }
   /* Dropdown */
   .skills-dropdown{
     position:static;
   }
-  .nav-link.skills-navlink{
+  .skills-dropdown .nav-link{
     padding-inline-end: 5rem;
   }
   .skills-dropdown .dropdown-content{

@@ -3,9 +3,10 @@ import { useState, useRef, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import photo from "../assets/logo-photo.png"
 import CircledImage from "./CircledImage"
-import { RiArrowDropDownLine } from "react-icons/ri";
-import { RiArrowDropUpLine } from "react-icons/ri";
-import { CiMenuBurger } from "react-icons/ci";
+import { RiArrowDropDownLine } from "react-icons/ri"
+import { RiArrowDropUpLine } from "react-icons/ri"
+import { CiMenuBurger } from "react-icons/ci"
+import LanguageButon from "./LanguageButton"
 
 export default function HeaderMobile(){
     const [isDropdownOpen, setIsDropdownOpen] = useState(false)
@@ -62,8 +63,11 @@ export default function HeaderMobile(){
                     <CircledImage src={photo}/>
                     <span className="logo-text">Diana Herrero</span>
                 </Link>
-                <div className={isMenuOpen ? "hamburguer-icon hamburguer-open-menu" : "hamburguer-icon"}>
-                    <CiMenuBurger onClick={toggleMenu}/>
+                <div className="right-buttons">
+                    <LanguageButon/>
+                    <div className={isMenuOpen ? "hamburguer-icon open-menu-icon" : "hamburguer-icon"}>
+                        <CiMenuBurger onClick={toggleMenu}/>
+                    </div>
                 </div>
             </div>
             <AnimatePresence>
@@ -83,7 +87,7 @@ export default function HeaderMobile(){
                     </NavLink>
                     <div className="skills-dropdown">
                         <div
-                            className={isSkillsActive ? "nav-link skills-navlink active-nav-link" : "nav-link skills-navlink"}
+                            className={isSkillsActive ? "nav-link active-nav-link" : "nav-link"}
                             onClick={toggleDropDown}
                         >
                             <NavLink
@@ -100,7 +104,7 @@ export default function HeaderMobile(){
                             >
                                 Skills
                             </NavLink>
-                            {isDropdownOpen ? <RiArrowDropDownLine className="arrow-drop-down"/> : <RiArrowDropUpLine className="arrow-drop-down"/>}
+                            {isDropdownOpen ? <RiArrowDropUpLine className="arrow-drop-down"/> : <RiArrowDropDownLine className="arrow-drop-down"/>}
                         </div>
                         <AnimatePresence>
                             {isDropdownOpen && (

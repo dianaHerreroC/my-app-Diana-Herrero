@@ -2,10 +2,10 @@ import { Link, NavLink, useNavigate } from "react-router-dom"
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import photo from "../assets/logo-photo.png"
+import { RiArrowDropDownLine } from "react-icons/ri"
+import { RiArrowDropUpLine } from "react-icons/ri"
 import CircledImage from "./CircledImage"
-import { RiArrowDropDownLine } from "react-icons/ri";
-import { RiArrowDropUpLine } from "react-icons/ri";
-
+import LanguageButon from "./LanguageButton"
 
 export default function HeaderDesktop(){
     const [isDropdownOpen, setIsDropdownOpen] = useState(false)
@@ -35,7 +35,7 @@ export default function HeaderDesktop(){
                     onMouseEnter={() => setIsDropdownOpen(true)}
                     onMouseLeave={() => setIsDropdownOpen(false)}
                 >
-                    <div className="nav-link skills-navlink">
+                    <div className="nav-link">
                         <NavLink
                             onClick={(e) => {
                                 e.preventDefault()
@@ -46,7 +46,7 @@ export default function HeaderDesktop(){
                         >
                             Skills
                         </NavLink>
-                        {isDropdownOpen ? <RiArrowDropDownLine className="arrow-drop-down"/> : <RiArrowDropUpLine className="arrow-drop-down"/>}
+                        {isDropdownOpen ? <RiArrowDropUpLine className="arrow-drop-down"/> : <RiArrowDropDownLine className="arrow-drop-down"/>}
                     </div>
                     <AnimatePresence>
                         {isDropdownOpen && (
@@ -82,6 +82,7 @@ export default function HeaderDesktop(){
                 >
                     Contact
                 </NavLink>
+                <LanguageButon/>
             </nav>
         </header>
     )
