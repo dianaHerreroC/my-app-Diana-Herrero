@@ -1,0 +1,42 @@
+{
+  "leftContainer": [
+    {
+      "id": "top-page",
+      "title": "Desarrollo Web",
+      "items": [
+        "Dominio de React, con experiencia en la creación de aplicaciones web dinámicas y responsivas.",
+        "Sólidos conocimientos de bases de datos y su integración en interfaces de usuario.",
+        "Competencia en programación orientada a objetos (POO), especialmente en C++, para el desarrollo de aplicaciones de escritorio.",
+        "Habilidad en control de versiones utilizando Git."
+      ]
+    },
+    {
+      "id": "technical-knowledge",
+      "title": "Otros conocimientos técnicos",
+      "items": [
+        "Implementación de varios algoritmos de Deep Learning con la biblioteca Keras (TensorFlow), con especial énfasis en el reconocimiento de imágenes mediante redes neuronales.",
+        "Conocimientos de sistemas operativos, especialmente experiencia en el uso de Ubuntu (Linux).",
+        "Familiaridad con el diseño gráfico utilizando AutoCAD."
+      ]
+    },
+    {
+      "id": "core-strengths",
+      "title": "Fortalezas personales",
+      "items": [
+        "Gran interés por el aprendizaje continuo y motivación para afrontar nuevos desafíos.",
+        "Habilidades de comunicación efectivas, con una actitud abierta para ayudar siempre que sea posible.",
+        "Proactividad en la resolución de problemas."
+      ]
+    }
+  ],
+  "rightContainer": [
+    {
+      "title": "Lenguajes de programación",
+      "items": ["JavaScript", "Python", "C/C++", "SQL", "C#"]
+    },
+    {
+      "title": "Idiomas",
+      "items": ["Español: Nativo", "Inglés: Fluido"]
+    }
+  ]
+}

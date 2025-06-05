@@ -1,10 +1,11 @@
+import { useTranslation } from "react-i18next"
 import EducationTitle from "../components/EducationTitle"
-import educationData from "../data/education.json"
 
 export default function Education(){
+    const { t } = useTranslation("education")
     return(
         <div className="education-section">
-            {[educationData.grade, educationData.certifications].map((section, index) => (
+            {[t("grade", { returnObjects: true }), t("certifications", { returnObjects: true })].map((section, index) => (
                 <section className="education-sub-section" key={index}>
                 <h1 className="titles">{section.title}</h1>
                 {section.items.map((item, idx) => (

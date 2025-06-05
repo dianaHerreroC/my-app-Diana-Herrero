@@ -1,12 +1,13 @@
+import { useTranslation } from "react-i18next";
 import ScrollWrapper from "../components/ScrollWrapper"
-import skillsData from "../data/skills.json"
 
 export default function Skills(){
+    const { t } = useTranslation("skills");
     return(
         <div className="skills-section">
             <ScrollWrapper>
                 <div className="left-container" id="top-page">
-                    {skillsData.leftContainer.map((section, index) => (
+                    {t("leftContainer", { returnObjects: true }).map((section, index) => (
                         <section key={index} id={section.id}>
                             {index !== 0 && <hr />}
                             <h1 className="titles">{section.title}</h1>
@@ -20,7 +21,7 @@ export default function Skills(){
                 </div>
             </ScrollWrapper>
             <div className="right-container">
-                {skillsData.rightContainer.map((section, index) => (
+                {t("rightContainer", { returnObjects: true }).map((section, index) => (
                     <>
                         <section key={index}>
                             <h1 className="titles">{section.title}</h1>
@@ -30,7 +31,7 @@ export default function Skills(){
                                 ))}
                             </ul>
                         </section>
-                        {index !== skillsData.rightContainer.length - 1 && <hr />}
+                        {index !== t("rightContainer", { returnObjects: true }).length - 1 && <hr />}
                     </>
                 ))}
             </div>

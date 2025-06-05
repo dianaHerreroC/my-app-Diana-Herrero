@@ -1,5 +1,6 @@
-import { Link, NavLink, useNavigate } from "react-router-dom"
-import { useState } from "react"
+import { useTranslation } from "react-i18next";
+import { Link, NavLink, useNavigate, useLocation } from "react-router-dom"
+import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import photo from "../assets/logo-photo.png"
 import { RiArrowDropDownLine } from "react-icons/ri"
@@ -8,6 +9,10 @@ import CircledImage from "./CircledImage"
 import LanguageButon from "./LanguageButton"
 
 export default function HeaderDesktop(){
+
+    const { t } = useTranslation("pageText")
+    const { t:tSkills } = useTranslation("skills")
+
     const [isDropdownOpen, setIsDropdownOpen] = useState(false)
     const navigate = useNavigate()
     const handleDropdownClick = (anchor) => {
@@ -17,6 +22,28 @@ export default function HeaderDesktop(){
             if (el) el.scrollIntoView({ behavior: "smooth" })
         }, 50)
     }
+
+    const location = useLocation()
+    const [activeSkillSection, setActiveSkillSection] = useState("top-page");
+    useEffect(() => {
+        if (isDropdownOpen && location.pathname === "/skills") {
+            const sections = tSkills("leftContainer", { returnObjects: true })
+            let visibleSection = null
+            for (const section of sections) {
+                const el = document.getElementById(section.id);
+                if (el) {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top >= 0 && rect.top < window.innerHeight / 2) {
+                        visibleSection = section.id;
+                        break;
+                    }
+                }
+            }
+            setActiveSkillSection(visibleSection);
+        }
+    }, [isDropdownOpen, location]);
+    const isSkillsItemActive = (id) => { return ( location.pathname === "/skills" && activeSkillSection === id ) }
+
     return(
         <header>
             <Link  to="/" className="my-logo">
@@ -28,7 +55,7 @@ export default function HeaderDesktop(){
                     to="/"
                     className={({ isActive }) => isActive ? "nav-link active-nav-link" : "nav-link"}
                 >
-                    About me
+                    {t("aboutMe")}
                 </NavLink>
                 <div
                     className="skills-dropdown"
@@ -44,7 +71,7 @@ export default function HeaderDesktop(){
                             to="/skills"
                             className={({ isActive }) => isActive ? "active-nav-link" : null}
                         >
-                            Skills
+                            {t("skills")}
                         </NavLink>
                         {isDropdownOpen ? <RiArrowDropUpLine className="arrow-drop-down"/> : <RiArrowDropDownLine className="arrow-drop-down"/>}
                     </div>
@@ -57,9 +84,16 @@ export default function HeaderDesktop(){
                                 exit={{ height: 0, opacity: 0 }}
                                 transition={{ duration: 0.3 }}
                             >
-                                <NavLink to="/skills" onClick={() => handleDropdownClick("top-page")} className="nav-link">Web Development</NavLink>
-                                <NavLink to="/skills" onClick={() => handleDropdownClick("technical-knowledge")} className="nav-link">Other Technical Knowledge</NavLink>
-                                <NavLink to="/skills" onClick={() => handleDropdownClick("core-strengths")} className="nav-link">Core Strengths</NavLink>
+                                {tSkills("leftContainer", { returnObjects: true }).map((section, index) => (
+                                    <NavLink
+                                        key={index}
+                                        to={`/skills#${section.id}`}
+                                        onClick={() => handleDropdownClick(section.id)}
+                                        className={isSkillsItemActive(section.id) ? "nav-link active-nav-link" : "nav-link"}
+                                    >
+                                        {section.title}
+                                    </NavLink>
+                                ))}
                             </motion.div>
                         )}
                     </AnimatePresence>
@@ -68,19 +102,19 @@ export default function HeaderDesktop(){
                     to="/education"
                     className={({ isActive }) => isActive ? "nav-link active-nav-link" : "nav-link"}
                 >
-                    Education
+                    {t("education")}
                 </NavLink>
                 <NavLink
                     to="/workhistory"
                     className={({ isActive }) => isActive ? "nav-link active-nav-link" : "nav-link"}
                 >
-                    Work history
+                    {t("workHistory")}
                 </NavLink>
                 <NavLink
                     to="/contact"
                     className={({ isActive }) => isActive ? "nav-link active-nav-link" : "nav-link"}
                 >
-                    Contact
+                    {t("contact")}
                 </NavLink>
                 <LanguageButon/>
             </nav>

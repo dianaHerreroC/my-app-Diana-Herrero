@@ -1,0 +1,37 @@
+{
+  "jobs": [
+    {
+      "company": "Spiterstulen Drift A.S. - Noruega",
+      "position": "Mantenimiento",
+      "dates": "Marzo 2024 - Octubre 2024",
+      "experiences": [
+        "Realización de una amplia variedad de tareas, incluyendo limpieza, servicio, cocina, retirada de nieve, entre otras — adaptándome siempre a las necesidades del momento.",
+        "Liderazgo del equipo de limpieza durante la temporada alta, asegurando que todas las tareas se completaran a tiempo, estableciendo prioridades y creando un ambiente de trabajo cómodo y eficiente según las capacidades de cada miembro del equipo.",
+        "Aunque estas tareas no están directamente relacionadas con mi trayectoria profesional actual, esta experiencia me enseñó valiosas habilidades personales y profesionales, como a gestionar de periodos cortos de alto estrés, asegurar un trabajo en equipo adecuado y satisfactorio en circunstancias desafiantes, y mantener flexibilidad y adaptabilidad en situaciones cambiantes."
+      ]
+    },
+    {
+      "company": "Bertrandt Technology Spain S.L. (anteriormente Philotech Ibérica)",
+      "position": "Desarrolladora de Software",
+      "dates": "Junio 2023 - Marzo 2024",
+      "experiences": [
+        "Participación en un proyecto de aplicación web utilizando C++ como lenguaje de programación y SQL para la gestión de bases de datos.",
+        "Desarrollo de software para el servicio Android Auto en BMW utilizando C.",
+        "Aplicación de prácticas de integración continua para probar el software en el proyecto mencionado.",
+        "Colaboración con el equipo utilizando Git para control de versiones y gestión del proyecto."
+      ]
+    },
+    {
+      "company": "Intelcia (anteriormente E-voluciona Estrategias de Transformación)",
+      "position": "Desarrolladora",
+      "dates": "Febrero 2020 - Mayo 2023",
+      "experiences": [
+        "Desarrollo con la plataforma Creatio, que incluye herramientas CRM y BPM, para proyectos internos y de clientes externos.",
+        "Incorporación de nuevos componentes en C# para mejorar métodos web y de aplicaciones, y personalización del comportamiento de la interfaz de usuario mediante la configuración de lógica de negocio.",
+        "Gestión de bases de datos utilizando SQL y SQL Server.",
+        "Desarrollo de scripts en Python para diversos proyectos, incluyendo gestión de datos y archivos Excel, solicitudes a servicios web y tareas de automatización web utilizando la biblioteca Selenium.",
+        "Uso de la herramienta Pentaho para automatizar procesos de gestión de archivos, acceso a servidores, envío de correos electrónicos y otras tareas."
+      ]
+    }
+  ]
+}

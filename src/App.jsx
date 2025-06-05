@@ -1,5 +1,5 @@
-import { useState } from 'react'
 import './App.css'
+import "./i18n.js"
 
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Layout from "./components/Layout"
@@ -10,8 +10,6 @@ import WorkHistory from "./pages/WorkHistory"
 import Contact from "./pages/Contact"
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <BrowserRouter>
       <Routes>

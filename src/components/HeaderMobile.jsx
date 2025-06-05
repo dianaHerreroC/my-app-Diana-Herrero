@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next"
 import { Link, NavLink, useNavigate, useLocation } from "react-router-dom"
 import { useState, useRef, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
@@ -9,8 +10,11 @@ import { CiMenuBurger } from "react-icons/ci"
 import LanguageButon from "./LanguageButton"
 
 export default function HeaderMobile(){
+
+    const { t } = useTranslation("pageText")
+    const { t:tSkills } = useTranslation("skills")
+
     const [isDropdownOpen, setIsDropdownOpen] = useState(false)
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const navigate = useNavigate()
     const handleDropdownClick = (anchor) => {
         navigate("/skills")
@@ -21,21 +25,42 @@ export default function HeaderMobile(){
         closeMenu()
     }
     const toggleDropDown = () =>{
-        setIsDropdownOpen(prev => !prev);
+        setIsDropdownOpen(prev => !prev)
     }
+
+    const [isMenuOpen, setIsMenuOpen] = useState(false)
     const toggleMenu = () => {
-        setIsMenuOpen(prev => !prev);
+        setIsMenuOpen(prev => !prev)
     }
-    const location = useLocation()
-    const isSkillsActive = location.pathname === "/skills"
-    const isWebDevActive = location.pathname === "/skills" && location.hash === "#top-page"
-    const isTechKnowActive = location.pathname === "/skills" && location.hash === "#technical-knowledge"
-    const isCoreStrActive = location.pathname === "/skills" && location.hash === "#core-strengths"
     const closeMenu = ()=>{
         setIsDropdownOpen(false)
         setIsMenuOpen(false)
     }
-    const menuRef = useRef(null) /* This is for detecting touch outside the menu and close it */
+
+    const location = useLocation()
+    const isSkillsActive = location.pathname === "/skills"
+    const [activeSkillSection, setActiveSkillSection] = useState("top-page");
+    useEffect(() => {
+        if (isMenuOpen && location.pathname === "/skills") {
+            const sections = tSkills("leftContainer", { returnObjects: true })
+            let visibleSection = null
+            for (const section of sections) {
+                const el = document.getElementById(section.id);
+                if (el) {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top >= 0 && rect.top < window.innerHeight / 2) {
+                        visibleSection = section.id;
+                        break;
+                    }
+                }
+            }
+            setActiveSkillSection(visibleSection);
+        }
+    }, [isMenuOpen, location]);
+    const isSkillsItemActive = (id) => { return ( location.pathname === "/skills" && activeSkillSection === id ) }
+
+    /* This is for detecting touch outside the menu and close it */
+    const menuRef = useRef(null)
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (menuRef.current && !menuRef.current.contains(event.target)) {
@@ -51,11 +76,14 @@ export default function HeaderMobile(){
             document.removeEventListener("touchstart", handleClickOutside)
         }
     }, [])
-    useEffect(() => { /* The dropdown opens automatically if you are in skills section */
+
+    /* The dropdown opens automatically if you are in skills section */
+    useEffect(() => {
         if (isMenuOpen && isSkillsActive) {
             setIsDropdownOpen(true);
         }
     }, [isMenuOpen]);
+
     return(
         <header ref={menuRef}>
             <div className="horizontal-header">
@@ -83,7 +111,7 @@ export default function HeaderMobile(){
                         className={({ isActive }) => isActive ? "nav-link active-nav-link" : "nav-link"}
                         onClick={closeMenu}
                     >
-                        About me
+                        {t("aboutMe")}
                     </NavLink>
                     <div className="skills-dropdown">
                         <div
@@ -102,7 +130,7 @@ export default function HeaderMobile(){
                                 }}
                                 to="/skills"
                             >
-                                Skills
+                                {t("skills")}
                             </NavLink>
                             {isDropdownOpen ? <RiArrowDropUpLine className="arrow-drop-down"/> : <RiArrowDropDownLine className="arrow-drop-down"/>}
                         </div>
@@ -115,27 +143,16 @@ export default function HeaderMobile(){
                                     exit={{ height: 0, opacity: 0 }}
                                     transition={{ duration: 0.3 }}
                                 >
-                                    <NavLink
-                                        to="/skills#top-page"
-                                        onClick={() => handleDropdownClick("top-page")}
-                                        className={isWebDevActive ? "nav-link active-nav-link" : "nav-link"}
-                                    >
-                                        Web Development
-                                    </NavLink>
-                                    <NavLink
-                                        to="/skills#technical-knowledge"
-                                        onClick={() => handleDropdownClick("technical-knowledge")}
-                                        className={isTechKnowActive ? "nav-link active-nav-link" : "nav-link"}
-                                    >
-                                        Other Technical Knowledge
-                                    </NavLink>
-                                    <NavLink
-                                        to="/skills#core-strengths"
-                                        onClick={() => handleDropdownClick("core-strengths")}
-                                        className={isCoreStrActive ? "nav-link active-nav-link" : "nav-link"}
-                                    >
-                                        Core Strengths
-                                    </NavLink>
+                                    {tSkills("leftContainer", { returnObjects: true }).map((section, index) => (
+                                        <NavLink
+                                            key={index}
+                                            to={`/skills#${section.id}`}
+                                            onClick={() => handleDropdownClick(section.id)}
+                                            className={isSkillsItemActive(section.id) ? "nav-link active-nav-link" : "nav-link"}
+                                        >
+                                            {section.title}
+                                        </NavLink>
+                                    ))}
                                 </motion.div>
                             )}
                         </AnimatePresence>
@@ -145,21 +162,21 @@ export default function HeaderMobile(){
                         className={({ isActive }) => isActive ? "nav-link active-nav-link" : "nav-link"}
                         onClick={closeMenu}
                     >
-                        Education
+                        {t("education")}
                     </NavLink>
                     <NavLink
                         to="/workhistory"
                         className={({ isActive }) => isActive ? "nav-link active-nav-link" : "nav-link"}
                         onClick={closeMenu}
                     >
-                        Work history
+                        {t("workHistory")}
                     </NavLink>
                     <NavLink
                         to="/contact"
                         className={({ isActive }) => isActive ? "nav-link active-nav-link" : "nav-link"}
                         onClick={closeMenu}
                     >
-                        Contact
+                        {t("contact")}
                     </NavLink>
                 </motion.nav>}
             </AnimatePresence>

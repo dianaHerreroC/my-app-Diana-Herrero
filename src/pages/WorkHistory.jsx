@@ -1,10 +1,11 @@
+import { useTranslation } from "react-i18next";
 import EmploymentItem from "../components/EmploymentItem"
-import workHistoryData from "../data/workHistory.json"
 
 export default function WorkHistory(){
+    const { t } = useTranslation("workHistory");
     return(
         <div className="work-history-section">
-            {workHistoryData.map((job, index) => (
+            {t("jobs", { returnObjects: true }).map((job, index) => (
                 <EmploymentItem
                     key={index}
                     company={job.company}
