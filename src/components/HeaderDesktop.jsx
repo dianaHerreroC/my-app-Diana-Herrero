@@ -21,6 +21,7 @@ export default function HeaderDesktop(){
             const el = document.getElementById(anchor)
             if (el) el.scrollIntoView({ behavior: "smooth" })
         }, 50)
+        setActiveSkillSection(anchor);
     }
 
     const location = useLocation()
@@ -41,7 +42,7 @@ export default function HeaderDesktop(){
             }
             setActiveSkillSection(visibleSection);
         }
-    }, [isDropdownOpen, location]);
+    }, [isDropdownOpen]);
     const isSkillsItemActive = (id) => { return ( location.pathname === "/skills" && activeSkillSection === id ) }
 
     return(
