@@ -13,9 +13,11 @@ export default function HeaderMobile(){
 
     const { t } = useTranslation("pageText")
     const { t:tSkills } = useTranslation("skills")
+    const { t:tPortfolio } = useTranslation("myPortfolio")
+
+    const navigate = useNavigate()
 
     const [isDropdownOpen, setIsDropdownOpen] = useState(false)
-    const navigate = useNavigate()
     const handleDropdownClick = (anchor) => {
         navigate("/skills")
         setTimeout(() => {
@@ -28,12 +30,26 @@ export default function HeaderMobile(){
         setIsDropdownOpen(prev => !prev)
     }
 
+    const [isPortfolioDropdownOpen, setIsPortfolioDropdownOpen] = useState(false)
+    const handlePortfolioDropdownClick = (anchor) => {
+        navigate("/skills")
+        setTimeout(() => {
+            const el = document.getElementById(anchor)
+            if (el) el.scrollIntoView({ behavior: "smooth" })
+        }, 50)
+        closeMenu()
+    }
+    const togglePortfolioDropDown = () =>{
+        setIsPortfolioDropdownOpen(prev => !prev)
+    }
+
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const toggleMenu = () => {
         setIsMenuOpen(prev => !prev)
     }
     const closeMenu = ()=>{
         setIsDropdownOpen(false)
+        setIsPortfolioDropdownOpen(false)
         setIsMenuOpen(false)
     }
 

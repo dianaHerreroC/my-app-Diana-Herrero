@@ -381,6 +381,31 @@ header .dropdown-content{
     var(--color-main-super-transparent)), var(--color-secondary);
 }
 
+/* ----------- Portfolio section ----------- */
+.portfolio-section{
+  padding-inline: 10dvw;
+  padding-top:15dvh;
+  padding-bottom:60dvh;
+}
+.portfolio-section .titles{
+  color: var(--color-main);
+  margin-top: 0;
+  margin-bottom: 2.7rem;
+}
+.portfolio-section .regular-text{
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding-left: 1.5rem;
+}
+.portfolio-section hr{
+  border: none;
+  height: 0.2rem;
+  background-color: var(--color-main);
+  margin-top: 3.75rem;
+  margin-bottom: 5rem;
+}
+
 /* ----------- Contact section ----------- */
 .contact-section{
   padding-block: 20dvh;
@@ -629,6 +654,23 @@ header .dropdown-content{
   }
   .employment-item ul{
     padding-left: 1.6rem;
+  }
+
+  /* ----------- Portfolio section ----------- */
+  .portfolio-section{
+    padding-inline: 10dvw;
+    padding-top:7.5dvh;
+    padding-bottom:80%;
+  }
+  .portfolio-section .titles{
+    margin-bottom: 2.16rem;
+  }
+  .portfolio-section .regular-text{
+    gap: 0.96rem;
+  }
+  .portfolio-section hr{
+    margin-top: 3rem;
+    margin-bottom: 4rem;
   }
 
   /* ----------- Contact section ----------- */

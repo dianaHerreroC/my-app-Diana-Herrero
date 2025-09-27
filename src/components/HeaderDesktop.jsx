@@ -12,11 +12,23 @@ export default function HeaderDesktop(){
 
     const { t } = useTranslation("pageText")
     const { t:tSkills } = useTranslation("skills")
+    const { t:tPortfolio } = useTranslation("myPortfolio")
+
+    const navigate = useNavigate()
 
     const [isDropdownOpen, setIsDropdownOpen] = useState(false)
-    const navigate = useNavigate()
     const handleDropdownClick = (anchor) => {
         navigate("/skills")
+        setTimeout(() => {
+            const el = document.getElementById(anchor)
+            if (el) el.scrollIntoView({ behavior: "smooth" })
+        }, 50)
+        setActiveSkillSection(anchor);
+    }
+
+    const [isPortfolioDropdownOpen, setIsPortfolioDropdownOpen] = useState(false)
+    const handlePortfolioDropdownClick = (anchor) => {
+        navigate("/myportfolio")
         setTimeout(() => {
             const el = document.getElementById(anchor)
             if (el) el.scrollIntoView({ behavior: "smooth" })
@@ -111,6 +123,61 @@ export default function HeaderDesktop(){
                 >
                     {t("workHistory")}
                 </NavLink>
+                <div
+                    className="skills-dropdown"
+                    onMouseEnter={() => setIsPortfolioDropdownOpen(true)}
+                    onMouseLeave={() => setIsPortfolioDropdownOpen(false)}
+                >
+                    <div className="nav-link">
+                        <NavLink
+                            onClick={(e) => {
+                                e.preventDefault()
+                                handlePortfolioDropdownClick("top-page")
+                            }}
+                            to="/myportfolio"
+                            className={({ isActive }) => isActive ? "active-nav-link" : null}
+                        >
+                            {t("myPortfolio")}
+                        </NavLink>
+                        {isPortfolioDropdownOpen ? <RiArrowDropUpLine className="arrow-drop-down"/> : <RiArrowDropDownLine className="arrow-drop-down"/>}
+                    </div>
+                    <AnimatePresence>
+                        {isPortfolioDropdownOpen && (
+                            <motion.div
+                                className="dropdown-content"
+                                initial={{ height: 0, opacity: 0 }}
+                                animate={{ height: "auto", opacity: 1 }}
+                                exit={{ height: 0, opacity: 0 }}
+                                transition={{ duration: 0.3 }}
+                            >
+                                {tPortfolio("sections", { returnObjects: true }).map((section, index) => (
+                                    <NavLink
+                                        key={index}
+                                        to={`/myportfolio#${section.id}`}
+                                        onClick={() => handleDropdownClick(section.id)}
+                                        className={isSkillsItemActive(section.id) ? "nav-link active-nav-link" : "nav-link"}
+                                    >
+                                        {section.title}
+                                    </NavLink>
+                                ))}
+                                {/*<NavLink
+                                    to={`/myportfolio#top-page`}
+                                    onClick={() => handlePortfolioDropdownClick("top-page")}
+                                    className={isSkillsItemActive("top-page") ? "nav-link active-nav-link" : "nav-link"}
+                                >
+                                    React
+                                </NavLink>
+                                <NavLink
+                                    to={`/myportfolio#top-page`}
+                                    onClick={() => handlePortfolioDropdownClick("top-page")}
+                                    className={isSkillsItemActive("top-page") ? "nav-link active-nav-link" : "nav-link"}
+                                >
+                                    WordPress
+                                </NavLink>*/}
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+                </div>
                 <NavLink
                     to="/contact"
                     className={({ isActive }) => isActive ? "nav-link active-nav-link" : "nav-link"}

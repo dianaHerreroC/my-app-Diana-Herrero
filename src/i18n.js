@@ -6,12 +6,14 @@ import enSkills from "./data/english/skills.json"
 import enContact from "./data/english/contact.json"
 import enEducation from "./data/english/education.json"
 import enWorkHistory from "./data/english/workHistory.json"
+import enMyPortfolio from "./data/english/myPortfolio.json"
 import enPageText from "./data/english/pageText.json"
 import esAboutMe from "./data/spanish/aboutMe.json"
 import esSkills from "./data/spanish/skills.json"
 import esContact from "./data/spanish/contact.json"
 import esEducation from "./data/spanish/education.json"
 import esWorkHistory from "./data/spanish/workHistory.json"
+import esMyPortfolio from "./data/spanish/myPortfolio.json"
 import esPageText from "./data/spanish/pageText.json"
 
 i18n
@@ -24,6 +26,7 @@ i18n
         contact: enContact,
         education: enEducation,
         workHistory: enWorkHistory,
+        myPortfolio: enMyPortfolio,
         pageText: enPageText
       },
       es: {
@@ -32,6 +35,7 @@ i18n
         contact: esContact,
         education: esEducation,
         workHistory: esWorkHistory,
+        myPortfolio: esMyPortfolio,
         pageText: esPageText
       },
     },

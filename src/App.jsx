@@ -8,6 +8,7 @@ import Skills from "./pages/Skills"
 import Education from "./pages/Education"
 import WorkHistory from "./pages/WorkHistory"
 import Contact from "./pages/Contact"
+import MyPortfolio from './pages/MyPortfolio.jsx'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="education" element={<Education />} />
           <Route path="workhistory" element={<WorkHistory />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="myportfolio" element={<MyPortfolio/>} />
         </Route>
       </Routes>
     </BrowserRouter>

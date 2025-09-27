@@ -1,0 +1,30 @@
+{
+  "sections":[
+    {
+      "id": "top-page",
+      "title": "React",
+      "paragraphs": [
+        "Esta página está construida con React",
+        "etc",
+        "etc",
+        "etc",
+        "etc",
+        "etc",
+        "etc",
+        "etc"
+      ]
+    },
+    {
+      "id": "top-page",
+      "title": "WordPress",
+      "paragraphs": [
+        "Blog de viajes",
+        "etc",
+        "etc",
+        "etc",
+        "etc",
+        "etc"
+      ]
+    }
+  ]
+}

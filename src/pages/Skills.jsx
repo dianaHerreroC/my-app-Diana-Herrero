@@ -13,7 +13,7 @@ export default function Skills(){
                             <h1 className="titles">{section.title}</h1>
                             <ul className="regular-text">
                                 {section.items.map((item, idx) => (
-                                    <li key={idx}>{item}</li>
+                                    <p key={idx}>{item}</p>
                                 ))}
                             </ul>
                         </section>
