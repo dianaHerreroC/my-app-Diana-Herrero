@@ -33,7 +33,7 @@ export default function HeaderDesktop(){
             const el = document.getElementById(anchor)
             if (el) el.scrollIntoView({ behavior: "smooth" })
         }, 50)
-        setActiveSkillSection(anchor);
+        setActivePortfolioSection(anchor);
     }
 
     const location = useLocation()
@@ -56,6 +56,27 @@ export default function HeaderDesktop(){
         }
     }, [isDropdownOpen]);
     const isSkillsItemActive = (id) => { return ( location.pathname === "/skills" && activeSkillSection === id ) }
+
+
+    const [activePortfolioSection, setActivePortfolioSection] = useState("top-page");
+    useEffect(() => {
+        if (isPortfolioDropdownOpen && location.pathname === "/myportfolio") {
+            const sections = tPortfolio("sections", { returnObjects: true })
+            let visibleSection = null
+            for (const section of sections) {
+                const el = document.getElementById(section.id);
+                if (el) {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top >= 0 && rect.top < window.innerHeight / 2) {
+                        visibleSection = section.id;
+                        break;
+                    }
+                }
+            }
+            setActivePortfolioSection(visibleSection);
+        }
+    }, [isPortfolioDropdownOpen]);
+    const isPortfolioItemActive = (id) => { return ( location.pathname === "/myportfolio" && activePortfolioSection === id ) }
 
     return(
         <header>
@@ -154,26 +175,12 @@ export default function HeaderDesktop(){
                                     <NavLink
                                         key={index}
                                         to={`/myportfolio#${section.id}`}
-                                        onClick={() => handleDropdownClick(section.id)}
-                                        className={isSkillsItemActive(section.id) ? "nav-link active-nav-link" : "nav-link"}
+                                        onClick={() => handlePortfolioDropdownClick(section.id)}
+                                        className={isPortfolioItemActive(section.id) ? "nav-link active-nav-link" : "nav-link"}
                                     >
                                         {section.title}
                                     </NavLink>
                                 ))}
-                                {/*<NavLink
-                                    to={`/myportfolio#top-page`}
-                                    onClick={() => handlePortfolioDropdownClick("top-page")}
-                                    className={isSkillsItemActive("top-page") ? "nav-link active-nav-link" : "nav-link"}
-                                >
-                                    React
-                                </NavLink>
-                                <NavLink
-                                    to={`/myportfolio#top-page`}
-                                    onClick={() => handlePortfolioDropdownClick("top-page")}
-                                    className={isSkillsItemActive("top-page") ? "nav-link active-nav-link" : "nav-link"}
-                                >
-                                    WordPress
-                                </NavLink>*/}
                             </motion.div>
                         )}
                     </AnimatePresence>
