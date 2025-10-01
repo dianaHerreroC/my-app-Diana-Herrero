@@ -145,7 +145,7 @@ header .nav-link, header .language-option{
   border-radius:0.31rem;
 }
 /* Dropdown */
-.skills-dropdown, .language-dropdown-button{
+.menu-dropdown, .language-dropdown-button{
   display:flex;
   flex-direction: column;
   position: relative;
@@ -166,7 +166,7 @@ header .dropdown-content{
   border: 0.06rem solid var(--color-white);
   border-radius: 0.31rem;
 }
-.skills-dropdown .nav-link{
+.menu-dropdown .nav-link{
   display:flex;
   align-items: center;
 }
@@ -541,13 +541,15 @@ header .dropdown-content{
     gap: 0.3rem;
   }
   /* Dropdown */
-  .skills-dropdown{
+  .menu-dropdown{
     position:static;
+    min-width: 100%;
   }
-  .skills-dropdown .nav-link{
+  .menu-dropdown .nav-link{
     padding-inline-end: 5rem;
+    min-width: 100%;
   }
-  .skills-dropdown .dropdown-content{
+  header .dropdown-content{
     position: static;
     background:none;
     border: 0px;
@@ -556,6 +558,7 @@ header .dropdown-content{
     padding-top: 1.5rem;
     padding-bottom: 0rem;
     gap:1.5rem;
+    min-width: 100%;
   }
 
   /* ----------- About me section ----------- */

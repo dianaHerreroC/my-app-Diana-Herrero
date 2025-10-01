@@ -22,7 +22,7 @@ export default function HeaderDesktop(){
         setTimeout(() => {
             const el = document.getElementById(anchor)
             if (el) el.scrollIntoView({ behavior: "smooth" })
-        }, 50)
+        }, 200)
         setActiveSkillSection(anchor);
     }
 
@@ -32,7 +32,7 @@ export default function HeaderDesktop(){
         setTimeout(() => {
             const el = document.getElementById(anchor)
             if (el) el.scrollIntoView({ behavior: "smooth" })
-        }, 50)
+        }, 200)
         setActivePortfolioSection(anchor);
     }
 
@@ -92,7 +92,7 @@ export default function HeaderDesktop(){
                     {t("aboutMe")}
                 </NavLink>
                 <div
-                    className="skills-dropdown"
+                    className="menu-dropdown"
                     onMouseEnter={() => setIsDropdownOpen(true)}
                     onMouseLeave={() => setIsDropdownOpen(false)}
                 >
@@ -145,7 +145,7 @@ export default function HeaderDesktop(){
                     {t("workHistory")}
                 </NavLink>
                 <div
-                    className="skills-dropdown"
+                    className="menu-dropdown"
                     onMouseEnter={() => setIsPortfolioDropdownOpen(true)}
                     onMouseLeave={() => setIsPortfolioDropdownOpen(false)}
                 >

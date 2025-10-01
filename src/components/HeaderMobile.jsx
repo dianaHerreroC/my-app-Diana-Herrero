@@ -23,7 +23,7 @@ export default function HeaderMobile(){
         setTimeout(() => {
             const el = document.getElementById(anchor)
             if (el) el.scrollIntoView({ behavior: "smooth" })
-        }, 50)
+        }, 200)
         closeMenu()
     }
     const toggleDropDown = () =>{
@@ -32,11 +32,11 @@ export default function HeaderMobile(){
 
     const [isPortfolioDropdownOpen, setIsPortfolioDropdownOpen] = useState(false)
     const handlePortfolioDropdownClick = (anchor) => {
-        navigate("/skills")
+        navigate("/myportfolio")
         setTimeout(() => {
             const el = document.getElementById(anchor)
             if (el) el.scrollIntoView({ behavior: "smooth" })
-        }, 50)
+        }, 200)
         closeMenu()
     }
     const togglePortfolioDropDown = () =>{
@@ -75,6 +75,27 @@ export default function HeaderMobile(){
     }, [isMenuOpen, location]);
     const isSkillsItemActive = (id) => { return ( location.pathname === "/skills" && activeSkillSection === id ) }
 
+    const isPortfolioActive = location.pathname === "/myportfolio"
+    const [activePortfolioSection, setActivePortfolioSection] = useState("top-page");
+    useEffect(() => {
+        if (isMenuOpen && location.pathname === "/myportfolio") {
+            const sections = tPortfolio("sections", { returnObjects: true })
+            let visibleSection = null
+            for (const section of sections) {
+                const el = document.getElementById(section.id);
+                if (el) {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top >= 0 && rect.top < window.innerHeight / 2) {
+                        visibleSection = section.id;
+                        break;
+                    }
+                }
+            }
+            setActivePortfolioSection(visibleSection);
+        }
+    }, [isMenuOpen, location]);
+    const isPortfolioItemActive = (id) => { return ( location.pathname === "/myportfolio" && activePortfolioSection === id ) }
+
     /* This is for detecting touch outside the menu and close it */
     const menuRef = useRef(null)
     useEffect(() => {
@@ -97,6 +118,8 @@ export default function HeaderMobile(){
     useEffect(() => {
         if (isMenuOpen && isSkillsActive) {
             setIsDropdownOpen(true);
+        } else if(isMenuOpen && isPortfolioActive){
+            setIsPortfolioDropdownOpen(true);
         }
     }, [isMenuOpen]);
 
@@ -129,7 +152,7 @@ export default function HeaderMobile(){
                     >
                         {t("aboutMe")}
                     </NavLink>
-                    <div className="skills-dropdown">
+                    <div className="menu-dropdown">
                         <div
                             className={isSkillsActive ? "nav-link active-nav-link" : "nav-link"}
                             onClick={toggleDropDown}
@@ -187,6 +210,50 @@ export default function HeaderMobile(){
                     >
                         {t("workHistory")}
                     </NavLink>
+                    <div className="menu-dropdown">
+                        <div
+                            className={isPortfolioActive ? "nav-link active-nav-link" : "nav-link"}
+                            onClick={togglePortfolioDropDown}
+                        >
+                            <NavLink
+                                onClick={(e) => {
+                                    e.preventDefault()
+                                    if(isPortfolioDropdownOpen){
+                                        handlePortfolioDropdownClick("top-page")
+                                    } else{
+                                        setIsPortfolioDropdownOpen(true)
+                                    }
+                                    e.stopPropagation()
+                                }}
+                                to="/myportfolio"
+                            >
+                                {t("myPortfolio")}
+                            </NavLink>
+                            {isPortfolioDropdownOpen ? <RiArrowDropUpLine className="arrow-drop-down"/> : <RiArrowDropDownLine className="arrow-drop-down"/>}
+                        </div>
+                        <AnimatePresence>
+                            {isPortfolioDropdownOpen && (
+                                <motion.div
+                                    className="dropdown-content"
+                                    initial={{ height: 0, opacity: 0 }}
+                                    animate={{ height: "auto", opacity: 1 }}
+                                    exit={{ height: 0, opacity: 0 }}
+                                    transition={{ duration: 0.3 }}
+                                >
+                                    {tPortfolio("sections", { returnObjects: true }).map((section, index) => (
+                                        <NavLink
+                                            key={index}
+                                            to={`/myportfolio#${section.id}`}
+                                            onClick={() => handlePortfolioDropdownClick(section.id)}
+                                            className={isPortfolioItemActive(section.id) ? "nav-link active-nav-link" : "nav-link"}
+                                        >
+                                            {section.title}
+                                        </NavLink>
+                                    ))}
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+                    </div>
                     <NavLink
                         to="/contact"
                         className={({ isActive }) => isActive ? "nav-link active-nav-link" : "nav-link"}
