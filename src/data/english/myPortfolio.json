@@ -4,26 +4,28 @@
       "id": "top-page",
       "title": "React",
       "paragraphs": [
-        "Esta página está construida con React",
-        "etc",
-        "etc",
-        "etc",
-        "etc",
-        "etc",
-        "etc",
-        "etc"
+        "This page is built entirely with <strong>React</strong>, using <italic>Vite</italic> as a bundler to provide a fast development environment and optimized builds.",
+        "I have applied a <strong>modular structure</strong> with several reusable components to facilitate code scalability and maintainability.",
+        "The <strong>design</strong> is <strong>responsive</strong>: in addition to using dynamic variables and applying <strong>adaptive CSS styles</strong>, some navigation menu logic adjusts depending on the device (desktop or mobile) to optimize the user experience.",
+        "I have implemented <strong>controlled components</strong> using <italic>useState</italic> and developed <strong>custom hooks</strong> to encapsulate repetitive logic, such as managing dropdown menus, automatically closing them when clicking outside the component, or synchronizing active sections with scrolling.",
+        "The interface incorporates <strong>smooth animations</strong> with <italic>Framer Motion</italic> and <strong>conditional styles</strong> in several components to enhance user interaction and visual feedback.",
+        "I have integrated <strong>multilingual support</strong> with <italic>react-i18next</italic>, organizing content into separate namespaces to keep the code clear and maintainable.",
+        "For infrastructure, I rely on <italic>Netlify</italic> for <strong>hosting</strong> and automatic deployment of the page from the repository, ensuring a structured workflow. As part of this workflow, I use <italic>GitHub</italic> as a <strong>version control system</strong>, maintaining an organized and well-segmented commit history."
       ]
     },
     {
       "id": "wp",
       "title": "WordPress",
       "paragraphs": [
-        "Blog de viajes",
-        "etc",
-        "etc",
-        "etc",
-        "etc",
-        "etc"
+        "<blog_link>https://backpackingthrough.com/</blog_link>",
+        "This travel blog is built with <strong>WordPress</strong> and its design focuses on visual content, highlighting a wide image gallery.",
+        "I have implemented an <strong>email subscription</strong> system using the <italic>MailPoet</italic> plugin, which allows users to receive news and blog updates.",
+        "I have set up <strong>custom pop-ups</strong> related to the Newsletter subscription using <italic>Popup Maker</italic>.",
+        "I have incorporated <strong>code snippets</strong> with <italic>Code Snippets</italic> plugin to customize the site’s functionality. Specifically, I added links to the YouTube channel featured on the site, so that each post connects to related videos, thereby maximizing visits.",
+        "I have optimized <strong>search engine ranking</strong> with <italic>Yoast SEO</italic>, improving both metadata and content structure.",
+        "I have configured the <strong>multilanguage</strong> option with <italic>TranslatePress</italic> to expand the blog’s international reach.",
+        "For infrastructure management, I have <strong>registered and managed the domain</strong> on <italic>Namecheap</italic> and configured the <strong>hosting</strong> with <italic>EasyWP</italic>.",
+        "I carry out <strong>continuous maintenance</strong> of the site, including reviewing <strong>updates</strong> for the site and plugins, as well as performing regular <strong>backups</strong>."
       ]
     }
   ]

@@ -1,4 +1,4 @@
-import { useTranslation } from "react-i18next";
+import { useTranslation, Trans } from "react-i18next";
 
 export default function MyPortfolio() {
     const { t } = useTranslation("myPortfolio");
@@ -10,7 +10,13 @@ export default function MyPortfolio() {
                             <h1 className="titles">{section.title}</h1>
                             <div className="regular-text">
                                 {section.paragraphs.map((paragraph, idx) => (
-                                    <p key={idx}>{paragraph}</p>
+                                    <p key={idx}>
+                                        <Trans i18nKey={paragraph} components={{
+                                            bold: <strong />,
+                                            italic: <em />,
+                                            blog_link: <a href="https://backpackingthrough.com" target="_blank" className="external-link"/>
+                                        }} />
+                                    </p>
                                 ))}
                             </div>
                         </section>

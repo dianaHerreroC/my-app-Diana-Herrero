@@ -4,26 +4,28 @@
       "id": "top-page",
       "title": "React",
       "paragraphs": [
-        "Esta página está construida con React",
-        "etc",
-        "etc",
-        "etc",
-        "etc",
-        "etc",
-        "etc",
-        "etc"
+        "Esta página está construida íntegramente con <strong>React</strong>, utilizando <italic>Vite</italic> como herramienta de bundling para obtener un entorno de desarrollo rápido y una compilación optimizada.",
+        "He aplicado una <strong>estructura modular</strong> con varios componentes reutilizables para facilitar la escalabilidad y mantenibilidad del código.",
+        "El <strong>diseño</strong> es <strong>responsivo</strong>: además de usar variables dinámicas y aplicar <strong>estilos CSS adaptativos</strong>, parte de la lógica del menú de navegación cambia según el dispositivo (desktop o móvil) para optimizar la experiencia de usuario.",
+        "He implementado <strong>componentes controlados</strong> mediante <italic>useState</italic> y desarrollado <strong>hooks personalizados</strong> para encapsular lógica repetitiva, como la gestión de menús desplegables, el cierre automático al hacer clic fuera del componente o la sincronización de secciones activas con el scroll.",
+        "La interfaz incorpora <strong>animaciones fluidas</strong> con <italic>Framer Motion</italic> y <strong>estilos condicionales</strong> en varios componentes para mejorar la interacción con el usuario y la respuesta visual.",
+        "He integrado <strong>soporte multilenguaje</strong> con <italic>react-i18next</italic>, organizando el contenido en namespaces separados para mantener el código claro y fácilmente mantenible.",
+        "Para la infraestructura, me he apoyado en <italic>Netlify</italic> para el <strong>hosting</strong> y el despliegue automático de la página desde el repositorio, asegurando un flujo de trabajo ágil. Como base de ese flujo, utilizo <italic>GitHub</italic> como sistema de <strong>control de versiones</strong>, manteniendo un historial de commits ordenado y segmentado."
       ]
     },
     {
-      "id": "top-page",
+      "id": "wp",
       "title": "WordPress",
       "paragraphs": [
-        "Blog de viajes",
-        "etc",
-        "etc",
-        "etc",
-        "etc",
-        "etc"
+        "<blog_link>https://backpackingthrough.com/</blog_link>",
+        "Este blog de viajes está desarrollado con <strong>WordPress</strong> y su diseño se centra en el contenido visual, destacando una amplia galería de imágenes.",
+        "He implementado un sistema de <strong>suscripción por correo electrónico</strong> mediante el plugin <italic>MailPoet</italic>, que permite a los usuarios recibir noticias y actualizaciones del blog.",
+        "He configurado <strong>pop-ups personalizados</strong> relacionados con la suscripción a la Newsletter utilizando <italic>Popup Maker</italic>.",
+        "He incorporado <strong>fragmentos de código</strong> con <italic>Code Snippets</italic> para personalizar la funcionalidad del sitio. En concreto, añadí enlaces al canal de YouTube anunciado en la página, de modo que cada entrada se conecta con vídeos relacionados con su contenido, maximizando así las visitas.",
+        "He optimizado el <strong>posicionamiento en buscadores</strong> con <italic>Yoast SEO</italic>, mejorando tanto los metadatos como la estructura del contenido.",
+        "He configurado la opción <strong>multilenguaje</strong> con <italic>TranslatePress/italic> para ampliar el alcance internacional del blog.",
+        "Para la gestión de la infraestructura, he <strong>registrado y administrado el dominio</strong> en <italic>Namecheap</italic> y he configurado el <strong>hosting</strong> con <italic>EasyWP</italic>.",
+        "Realizo un <strong>mantenimiento continuo</strong> de la página, que incluye la revisión de <strong>actualizaciones</strong> del sitio y de los plugins, así como la realización periódica de <strong>copias de seguridad</strong>."
       ]
     }
   ]

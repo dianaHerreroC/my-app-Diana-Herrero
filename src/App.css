@@ -61,6 +61,14 @@
   font-weight: var(--font-weight-regular);
   font-size: 0.69rem;
 }
+.external-link{
+  color:var(--color-main);
+  text-decoration: none;
+}
+.external-link:hover {
+  color: var(--color-secondary);
+  text-decoration: underline;
+}
 
 /* ----------- General ----------- */
 * {
