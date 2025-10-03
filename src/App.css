@@ -557,7 +557,7 @@ header .dropdown-content{
     padding-inline-end: 5rem;
     min-width: 100%;
   }
-  header .dropdown-content{
+  header .menu-dropdown .dropdown-content{
     position: static;
     background:none;
     border: 0px;
